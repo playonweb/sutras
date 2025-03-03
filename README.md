@@ -20,6 +20,41 @@ To run the tests for both Ruby and Node packages, run the following command:
 ./test.sh
 ```
 
+## Steps to use
+
+**Note** For private repos: create github repository personal access token GITHUB_PAT with read only permissions to the `content` and `metadata`
+
+### In ruby
+```ruby
+# Gemfile
+gem 'sutra_matrix', git: 'https://github.com/playonweb/sutras', branch: 'main', glob: 'ruby-gem/*.gemspec'
+```
+```sh
+# (Optional) For private repo
+export GITHUB_USERNAME="your_username"
+export GITHUB_PAT="your_personal_access_token"
+bundle config set --global github.com "$GITHUB_USERNAME:$GITHUB_PAT"
+```
+
+```sh
+bundle install
+```
+
+### In node
+```json
+// package.json
+// use gitpkg when package is under subdir like here in node-package/
+"dependencies": {
+    "sutra-matrix": "https://gitpkg.now.sh/PlayOnWeb/sutras/node-package?main"
+}
+```
+```sh
+npm install
+```
+
+For private node packages use separate repo because subdir package is not accessible by node.
+You may also publish package.tar.gz
+
 **Note** set common version numbers too.
 
 ## Ruby gem
