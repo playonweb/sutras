@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "author": "Rahul Dhole",
   "description": "A simple library for calculating Sutra scores based on binary values.",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "typescript": "^5.8.2"
   }
 }

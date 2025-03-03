@@ -24,5 +24,6 @@ ruby -Ilib test/calculate_test.rb
 ```sh
 cd node-package
 npm install
+npm run build
 npm run test
 ```
