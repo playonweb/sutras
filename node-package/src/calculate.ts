@@ -1,4 +1,4 @@
-class SutraMatrix {
+export default class SutraMatrix {
   private static readonly MATRIX: Map<string, number> = new Map([
     [[0, 0, 0, 0].toString(), 0],  [[1, 0, 0, 0].toString(), 1],
     [[0, 1, 0, 0].toString(), 2],  [[1, 1, 0, 0].toString(), 3],
@@ -22,5 +22,3 @@ class SutraMatrix {
     return this.MATRIX.get(values.toString()) ?? -1;
   }
 }
-
-export default SutraMatrix;
