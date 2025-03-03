@@ -17,6 +17,6 @@ describe("SutraMatrix.score", () => {
   });
 
   test("throws an error for invalid inputs", () => {
-    expect(() => SutraMatrix.score(0, 0, 0, 2)).toThrow("U, I, E, P should be binary values (0 or 1)");
+    expect(() => SutraMatrix.score(0, 0, 0, 2)).toThrow("U, I, E, P should be binary values (0, 1, true, or false)");
   });
 });

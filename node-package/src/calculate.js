@@ -3,10 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class SutraMatrix {
     static score(u, i, e, p) {
         var _a;
-        if (![u, i, e, p].every(x => x === 0 || x === 1)) {
-            throw new Error("U, I, E, P should be binary values (0 or 1)");
+        // Convert boolean values to 0 or 1
+        const values = [u, i, e, p].map(x => (x === true ? 1 : x === false ? 0 : x));
+        // Validate inputs
+        if (!values.every(x => x === 0 || x === 1)) {
+            throw new Error("U, I, E, P should be binary values (0, 1, true, or false)");
         }
-        return (_a = this.MATRIX.get([u, i, e, p].toString())) !== null && _a !== void 0 ? _a : -1;
+        return (_a = this.MATRIX.get(values.toString())) !== null && _a !== void 0 ? _a : -1;
     }
 }
 SutraMatrix.MATRIX = new Map([

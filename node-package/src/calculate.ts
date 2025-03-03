@@ -10,11 +10,16 @@ class SutraMatrix {
     [[0, 1, 1, 1].toString(), 14], [[1, 1, 1, 1].toString(), 15]
   ]);
 
-  static score(u: number, i: number, e: number, p: number): number {
-    if (![u, i, e, p].every(x => x === 0 || x === 1)) {
-      throw new Error("U, I, E, P should be binary values (0 or 1)");
+  static score(u: number | boolean, i: number | boolean, e: number | boolean, p: number | boolean): number {
+    // Convert boolean values to 0 or 1
+    const values = [u, i, e, p].map(x => (x === true ? 1 : x === false ? 0 : x));
+
+    // Validate inputs
+    if (!values.every(x => x === 0 || x === 1)) {
+      throw new Error("U, I, E, P should be binary values (0, 1, true, or false)");
     }
-    return this.MATRIX.get([u, i, e, p].toString()) ?? -1;
+
+    return this.MATRIX.get(values.toString()) ?? -1;
   }
 }
 
