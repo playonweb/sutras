@@ -1,0 +1,17 @@
+const fs = require("fs");
+const path = require("path");
+const SutraMatrix = require("../lib/calculate");
+
+const testCases = JSON.parse(fs.readFileSync(path.join(__dirname, "../../tests/score-test.json"), "utf8"));
+
+describe("SutraMatrix.score", () => {
+  testCases.forEach(({ input, expected }) => {
+    test(`score(${input}) should return ${expected}`, () => {
+      expect(SutraMatrix.score(...input)).toBe(expected);
+    });
+  });
+
+  test("throws an error for invalid inputs", () => {
+    expect(() => SutraMatrix.score(0, 0, 0, 2)).toThrow("U, I, E, P should be binary values (0 or 1)");
+  });
+});
