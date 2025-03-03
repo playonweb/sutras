@@ -44,6 +44,7 @@ bundle install
 ```json
 // package.json
 // use gitpkg when package is under subdir like here in node-package/
+"type": "module",
 "dependencies": {
     "sutra-matrix": "https://gitpkg.now.sh/PlayOnWeb/sutras/node-package?main"
 }
@@ -51,6 +52,7 @@ bundle install
 ```sh
 npm install
 ```
+example: [node-package/examples/usage.js](node-package/examples/usage.js)
 
 For private node packages use separate repo because subdir package is not accessible by node.
 You may also publish package.tar.gz
