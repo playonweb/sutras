@@ -1,12 +1,24 @@
 {
   "name": "sutra-matrix",
   "version": "0.1.0",
-  "main": "src/calculate.js",
   "type": "module",
+  "main": "./dist/calculate.js",
+  "types": "./dist/calculate.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/calculate.d.ts",
+      "import": "./dist/calculate.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js \".*\\.ts$\"",
-    "example": "node test/example.js"
+    "example": "node test/example.js",
+    "prepublishOnly": "npm run build"
   },
   "author": "Rahul Dhole",
   "description": "A simple library for calculating Sutra scores based on binary values.",
