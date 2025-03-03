@@ -25,9 +25,13 @@ module SutraMatrix
           }.freeze
 
         def self.score(u, i, e, p)
-        raise InvalidInputError, "U, I, E, P should be binary (0 or 1)" unless [u, i, e, p].all? { |x| [0, 1].include?(x) }
+            # Convert true/false to 1/0
+            values = [u, i, e, p].map { |x| x == true ? 1 : x == false ? 0 : x }
 
-        MATRIX[[u, i, e, p]]
+            # Validate input
+            raise InvalidInputError, "U, I, E, P should be binary (0, 1, true, or false)" unless values.all? { |x| [0, 1].include?(x) }
+
+            MATRIX[values]
         end
     end
 end

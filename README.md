@@ -17,6 +17,8 @@ gem install ./sutra_matrix-0.1.0.gem
 
 ruby example.rb
 ruby -Ilib test/calculate_test.rb
+
+# gem uninstall ./sutra_matrix-0.1.0.gem
 ```
 
 ## Node package
