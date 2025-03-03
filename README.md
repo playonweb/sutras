@@ -4,6 +4,22 @@ It is to build and distribute common utilities between frontend and backend with
 It's a common source of truth between ruby backend and javascript frontend.
 So this monorepo contains a ruby gem and a node package.
 
+## Steps to Run:
+
+### Build the project:
+To build both Ruby and Node packages, run the following command in the parent folder:
+
+```sh
+./build.sh
+```
+
+### Test the project:
+To run the tests for both Ruby and Node packages, run the following command:
+
+```sh
+./test.sh
+```
+
 **Note** set common version numbers too.
 
 ## Ruby gem
